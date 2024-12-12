@@ -29,7 +29,7 @@ namespace FovFix.ExamplePatches
         [PatchPostfix]
         private static void PatchPostfix(int x,CameraClass __instance)
         {
-            __instance.method_4(x, 50, 150);
+            __instance.method_4(x, Plugin.MinFov.Value, Plugin.MaxFov.Value);
         }
         // uncomment the 'new SimplePatch().Enable();' line in your Plugin.cs script to enable this patch.
     }

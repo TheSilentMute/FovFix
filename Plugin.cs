@@ -20,6 +20,8 @@ namespace FovFix
         internal static ConfigEntry<int> MinFov;
         internal static ConfigEntry<int> MaxFov;
         internal static ConfigEntry<float> HudFov;
+        internal static ConfigEntry<float> OpticsFov;
+        internal static ConfigEntry<float> AimDelta;
 
 
         public static ManualLogSource LogSource;
@@ -38,6 +40,7 @@ namespace FovFix
             new SettingsFOVPatch().Enable();
             new method18Patch().Enable();
             new HeadBobPatch().Enable();
+            new AimFOVPatch().Enable();
 
             MinFov = Config.Bind(
                 "Main Section",
@@ -59,6 +62,18 @@ namespace FovFix
                 0.05f,
                 new ConfigDescription("Pseudo-value for HUD FOV, will change camera position relative to your body. The lower the value, the further away from your body.",
                 new AcceptableValueRange<float>(-0.2f, 0.2f)));
+            OpticsFov = Config.Bind(
+                "Main Section",
+                "Optics FOV",
+                35f,
+                new ConfigDescription("FOV when using optics",
+                new AcceptableValueRange<float>(1f, 150)));
+            AimDelta = Config.Bind(
+                "Main Section",
+                "Aim Delta",
+                15f,
+                new ConfigDescription("Value subtracted from FOV when aiming without optics",
+                new AcceptableValueRange<float>(0f,150f)));
 
             HudFov.SettingChanged += HudFov_SettingChanged;
         }
