@@ -39,7 +39,6 @@ namespace FovFix
             new ShowFOVPatch().Enable();
             new SettingsFOVPatch().Enable();
             new method18Patch().Enable();
-            new HeadBobPatch().Enable();
             new AimFOVPatch().Enable();
 
             MinFov = Config.Bind(

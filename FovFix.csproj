@@ -107,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExamplePatches\AimFOVPatch.cs" />
-    <Compile Include="ExamplePatches\HeadBobPatch.cs" />
     <Compile Include="ExamplePatches\method18Patch.cs" />
     <Compile Include="ExamplePatches\ShowFOVPatch.cs" />
     <Compile Include="ExamplePatches\SettingsFOVPatch.cs" />

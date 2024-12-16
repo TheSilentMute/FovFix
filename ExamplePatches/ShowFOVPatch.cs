@@ -34,10 +34,9 @@ namespace FovFix.ExamplePatches
     }
 
         [PatchPostfix]
-        private static void PatchPostfix(ref NumberSlider ____fov, ref NumberSlider ____headbobbing, ref GClass1040 ___gclass1040_0)
+        private static void PatchPostfix(ref NumberSlider ____fov, ref GClass1040 ___gclass1040_0)
         {
             SettingsTab.BindNumberSliderToSetting(____fov, ___gclass1040_0.FieldOfView, Plugin.MinFov.Value, Plugin.MaxFov.Value);
-            SettingsTab.BindNumberSliderToSetting(____headbobbing, ___gclass1040_0.HeadBobbing, 0.0f, 1f, "F1");
         }
 
         // uncomment the 'new SimplePatch().Enable();' line in your Plugin.cs script to enable this patch.
